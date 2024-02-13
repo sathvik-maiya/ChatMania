@@ -6,6 +6,8 @@ const Home = ({ username, setUsername, socket }) => {
  const navigate = useNavigate();
 
  const startChatting = () => {
+
+  //if user field is empty it won't navigate to chats page
     if (username !== '') {
       socket.emit('start_chatting', {username});
        navigate('/chats', { replace: true });

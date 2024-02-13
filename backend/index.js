@@ -15,6 +15,9 @@ const io = new Server(server, {
   },
 });
 
+const ADMIN_BOT = "Admin";
+let Users_list = [];
+
 
 io.on("connection", (socket) => {
 
@@ -38,6 +41,17 @@ io.on("connection", (socket) => {
       created_time,
     });
 
+    Users_list.push({ id: socket.id, username, room });
+    socket.emit(
+      "All_users",
+      Users_list.filter((user) => user.room === room)
+    );
+
+    socket.on("send_message", (data) => {
+      io.in(room).emit("receive_message", data);
+    });
+
+   
   });
 });
 
