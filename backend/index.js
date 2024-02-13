@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-mania.vercel.app",
+    origin: '*',
     methods: ["GET", "POST"],
     credentials: true 
   },
