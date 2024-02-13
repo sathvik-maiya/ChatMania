@@ -5,7 +5,7 @@ import io from "socket.io-client";
 import Home from "./pages/home";
 import Chat from "./pages/chat.jsx";
 
-const socket = io.connect("https://chat-mania-api.vercel.app");
+const socket = io.connect("http://localhost:4000");
 
 function App() {
     const [username, setUsername] = useState("");
