@@ -12,6 +12,7 @@ const io = new Server(server, {
   cors: {
     origin: "https://chat-mania.vercel.app",
     methods: ["GET", "POST"],
+    credentials: true 
   },
 });
 
