@@ -93,6 +93,42 @@
 }
 
 
+.UsersContainer {
+    border-right: 1px solid #151fa5;
+    padding-left: 60px;
+    background-color: rgb(13, 12, 12);
+}
+
+.Title {
+    margin-bottom: 60px;
+    margin-right: 60px;
+    margin-top: 60px;
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.users {
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.allUsers {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 60px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    color: rgb(185, 183, 183);
+}
+
+.allUsers li {
+    margin-bottom: 17px;
+}
+
+
 .messagesContainer {
     height: 85vh;
     overflow: auto;
@@ -140,3 +176,76 @@
     font-size: 0.9rem;
 }
 
+@media only screen and (max-width: 630px) {
+
+
+    
+        .insideContainer {
+
+            min-height: 45%;
+            width: 90%;
+            max-width: 400px;
+            padding: 40px;
+    
+    
+        }
+    
+        .heading {
+
+            margin-left: 11px;
+      
+        }
+    
+        
+           
+        
+                .UsersContainer {
+                  
+                    display: none;
+                   
+                }
+        
+                                .chatDiv {
+                                
+                                    grid-template-columns: 4fr;
+                                    gap:   0px;
+                                
+                                }
+                               
+                
+                                .message {
+                                    font-family: "Roboto", sans-serif;
+                                    background:black;
+                                    border-radius: 6px;
+                                    margin-bottom: 14px;
+                             
+                                    padding:10px;
+                                    color: white;
+                
+                                }
+                
+                                .userName {
+                                    font-family: "Roboto", sans-serif;
+                                    color: #fff;
+                                    font-size: 0.75rem;
+                                }
+                
+                                .Time {
+                                    font-family: "Roboto", sans-serif;
+                                    color: #fff;
+                                }
+                
+                
+                                .sendMessage {
+                                    padding: 16px 20px 20px 30px;
+                                }
+                
+                                .messageInput {
+                               
+                                    margin-right: 17px;
+                                    width: 69%;
+                                 
+                                }
+              
+
+}

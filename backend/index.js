@@ -18,6 +18,9 @@ const io = new Server(server, {
 const ADMIN_BOT = "Admin";
 let Users_list = [];
 
+function leaveRoom(userID, chatRoomUsers) {
+  return chatRoomUsers.filter((user) => user.id != userID);
+}
 
 io.on("connection", (socket) => {
 
@@ -51,7 +54,19 @@ io.on("connection", (socket) => {
       io.in(room).emit("receive_message", data);
     });
 
-   
+    socket.on("leave_room", (data) => {
+      const { username } = data;
+      socket.leave(room);
+    let created_time = Date.now();
+      Users_list = leaveRoom(socket.id, Users_list);
+      socket.to(room).emit("All_users", Users_list);
+      socket.to(room).emit("receive_message", {
+        username: ADMIN_BOT,
+        message: `${username} has left chatMania`,
+        created_time,
+      });
+    
+    });
   });
 });
 
